@@ -1,0 +1,14 @@
+
+{
+  "PATH": {
+    "PRIMER3": "./primer3_core",
+    "BOWTIE": "bowtie/bowtie",
+    "TWOBITTOFA": "./twoBitToFa",
+    "TWOBIT_INDEX_DIR": "DATASET_DIR",
+    "BOWTIE_INDEX_DIR": "DATASET_DIR/indexes/bowtie1",
+    "ISOFORMS_INDEX_DIR": "/your/full/path/to/ebwt_transcriptome_folder_and_2bit_of_genome",
+    "ISOFORMS_MT_DIR": "/your/full/path/to/vienna_MT_folder",
+    "GENE_TABLE_INDEX_DIR": "DATASET_DIR/chopchop"
+  },
+  "THREADS": 1
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd $WORK_DIR/tools
+
+echo Setting up sgRNA Scorer 2.0
+
+wget -O sgrnascorer.zip https://sgrnascorer.cancer.gov/downloads/sgRNAScorer.2.0.zip
+unzip sgrnascorer.zip
+rm sgrnascorer.zip
+rm -rf __MACOSX/
+mv Standalone/ ./sgrnascorer
+
+cp -f $WORK_DIR/scripts/setup/tools_setup/sgrnascorer/identifyAndScore.py sgrnascorer/identifyAndScore.py
+
+pip install biopython==1.76
+pip install -U scikit-learn

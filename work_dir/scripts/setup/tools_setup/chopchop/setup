@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo Setting up CHOPCHOP
+
+cd $WORK_DIR/tools
+
+pip install biopython==1.76
+pip install pandas
+pip install scipy
+
+wget -O chopchop.zip https://bitbucket.org/valenlab/chopchop/get/a4359cbe255a.zip#
+unzip chopchop.zip
+rm chopchop.zip
+mv valenlab-chopchop-a4359cbe255a chopchop
+
+cp -f $WORK_DIR/scripts/setup/tools_setup/chopchop/chopchop.py chopchop/chopchop.py
+cp -f $WORK_DIR/scripts/setup/tools_setup/chopchop/config.json chopchop/config.json

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd $WORK_DIR/tools
+
+echo Setting up SSC
+
+wget -O ssc.tar.gz https://sourceforge.net/projects/spacerscoringcrispr/files/latest/download
+tar xzfv ssc.tar.gz
+rm ssc.tar.gz
+mv SSC0.1 ssc
+cd ssc
+
+cp -f $WORK_DIR/scripts/setup/tools_setup/ssc/Fasta2Spacer.c src/Fasta2Spacer.c
+
+make

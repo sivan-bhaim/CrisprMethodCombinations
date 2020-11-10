@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo Setting up FlashFry
+
+sudo apt-get -y install default-jdk
+
+cd $WORK_DIR/tools
+mkdir flashfry
+cd flashfry
+wget -O flashfry.jar https://github.com/mckennalab/FlashFry/releases/download/1.10/FlashFry-assembly-1.10.jar
+cp -f $WORK_DIR/scripts/setup/tools_setup/flashfry/flashfry.py ./flashfry.py

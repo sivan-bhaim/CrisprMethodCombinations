@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo Setting up BWA
+wget -O bwa.tar.bz2 https://sourceforge.net/projects/bio-bwa/files/latest/download
+tar xjvf bwa.tar.bz2
+rm bwa.tar.bz2
+cd bwa-0.7.17
+make
+cd ..
+sudo mv bwa-0.7.17 /opt/bwa

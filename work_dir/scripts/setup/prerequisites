@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+cd $WORK_DIR/scripts/setup/prerequisites_setup
+
+./packages_and_python
+./bowtie
+./bwa
+./twobit
+
+echo export PATH=$PATH:/opt/bowtie:/opt/bowtie2:/opt/bwa:/opt/2bit >> ~/.bashrc
+echo export PYTHONPATH="${PYTHONPATH}:$WORK_DIR/scripts" >> ~/.bashrc

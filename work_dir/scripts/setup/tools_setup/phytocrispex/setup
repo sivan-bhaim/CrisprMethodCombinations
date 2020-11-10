@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd $WORK_DIR/tools
+
+echo Setting up PhytoCRISP-Ex
+
+wget -O phytoCRISP-Ex.tar.gz http://www.phytocrispex.biologie.ens.fr/CRISP-Ex/crispexdownloads/phytoCRISP-Ex_v1.0.tar.gz
+tar xzvf phytoCRISP-Ex.tar.gz
+rm phytoCRISP-Ex.tar.gz
+mv phytoCRISP-Ex_v1.0 phytocrispex
+
+cd phytocrispex/
+
+cp -f $WORK_DIR/scripts/setup/tools_setup/phytocrispex/install.sh .
+cp -f $WORK_DIR/scripts/setup/tools_setup/phytocrispex/wrapper.sh SCRIPTS/
+cp -f $WORK_DIR/scripts/setup/tools_setup/phytocrispex/phytoCRISPex SCRIPTS/
+
+mkdir bin
+chmod 755 install.sh
+./install.sh $WORK_DIR/tools/phytocrispex/bin
+source bin/crispex_profile
+chmod 755 bin/phytoCRISPex
+
+echo export CRISPEX=$WORK_DIR/tools/phytocrispex/bin >> ~/.bashrc
+export CRISPEX=$WORK_DIR/tools/phytocrispex/bin

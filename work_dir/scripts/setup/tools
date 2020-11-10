@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+cd $WORK_DIR/scripts/setup/tools_setup
+
+echo Setting up prediction tools
+
+./chopchop/setup
+./flashfry/setup
+./mm10db/setup
+./phytocrispex/setup
+./sgrnascorer/setup
+./ssc/setup

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cd $WORK_DIR/tools
+
+echo Setting up mm10db
+
+git clone https://github.com/bmds-lab/mm10db
+cd mm10db
+
+cp $WORK_DIR/scripts/setup/tools_setup/mm10db/createListExons.py .
+cp $WORK_DIR/scripts/setup/tools_setup/mm10db/prepareExonSequences.py .
+cp $WORK_DIR/scripts/setup/tools_setup/mm10db/prepareGeneListsWholeGenome.py .
+cp $WORK_DIR/scripts/setup/tools_setup/mm10db/prepareListOfftargetSites.py .
+cp $WORK_DIR/scripts/setup/tools_setup/mm10db/target_identitification_viaC.py .
+
+make pthread
+
+echo Setting up ViennaRNA
+
+wget -O vienna.tar.gz https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz
+tar xzfv vienna.tar.gz
+rm vienna.tar.gz
+cd ViennaRNA-2.4.14
+./configure
+make
+sudo make install

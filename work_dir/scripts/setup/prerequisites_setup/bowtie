@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo Setting up Bowtie
+wget -O bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.2.3/bowtie-1.2.3-linux-x86_64.zip/download
+unzip bowtie.zip
+rm bowtie.zip
+sudo mv bowtie-1.2.3-linux-x86_64/ /opt/bowtie
+sudo ln -s /opt/bowtie/bowtie-build /opt/bowtie/bowtie1-build
+
+echo Setting up Bowtie2
+wget -O bowtie2.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.1/bowtie2-2.4.1-linux-x86_64.zip/download
+unzip bowtie2.zip
+rm bowtie2.zip
+sudo mv bowtie2-2.4.1-linux-x86_64/ /opt/bowtie2

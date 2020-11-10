@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This is the original phytoCRISPex with minor modifications.
+# These are meant to change the command line interface for convenience
+
+value=`echo $0 | awk -F "/" '{ print $NF }' | sed -e 's/[\r\t ]//g'`
+
+
+if [ "$value" == "phytoCRISPex" ]  && [ "$1" == "-g" ] && [ "$3" == "-c" ]
+then
+	$CRISPEX/wrapper.sh $2 $4 NGG G
+
+else
+	more $CRISPEX/phytoCRISPex_usage.txt
+fi

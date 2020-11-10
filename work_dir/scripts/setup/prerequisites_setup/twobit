@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo mkdir /opt/2bit
+
+echo Setting up faToTwoBit
+wget -O faToTwoBit http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/faToTwoBit
+sudo mv faToTwoBit /opt/2bit
+sudo chmod +x /opt/2bit/faToTwoBit
+
+echo Setting up twoBitInfo
+wget -O twoBitInfo http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/twoBitInfo
+sudo mv twoBitInfo /opt/2bit
+sudo chmod +x /opt/2bit/twoBitInfo 

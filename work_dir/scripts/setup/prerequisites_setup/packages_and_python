@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo Updating and installing missing packages
+sudo apt update
+sudo apt -y install python2 make build-essential libncbi6-dev zlib1g-dev python-dev git curl
+
+echo Setting up Python 2
+wget -O get-pip.py https://bootstrap.pypa.io/get-pip.py
+sudo python2 get-pip.py
+
